@@ -10,7 +10,7 @@ def index(request):
 @require_POST
 def addTodo(request):
     form = request.POST['inputtodo']
-    if len(form)<70:
+    if len(form)<70 and len(form)!=0:
         new_todo = Todo(text=request.POST['inputtodo'])
         new_todo.save()
     
